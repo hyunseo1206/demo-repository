@@ -9,11 +9,15 @@ import com.example.demo.persistence.TodoRepository;
 public class TodoService {
 	@Autowired
 	private TodoRepository repository;
+	public String testService(){
+	// Todo Entity 생성
 	
-	public String testService() {
 		TodoEntity entity = TodoEntity.builder().userId("user01").title("My first todo item").build();
+	//Todo Entity 저장
+	
 		repository.save(entity);
-		TodoEntity savedEntity = repository.findByUserId(entity.getUserId()).get(0);
-		return savedEntity.getUserId();
+	//Todo Entity 검색
+	TodoEntity savedEntity = repository.searchByUserId(entity.getUserId()).get(0);
+	return savedEntity.getUserId();
 	}
 }
