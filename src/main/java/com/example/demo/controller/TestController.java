@@ -13,7 +13,6 @@ import com.example.demo.service.TodoService;
 @RestController
 @RequestMapping("todo")
 public class TestController {
-	
 	@Autowired
 	private TodoService service;
 	
